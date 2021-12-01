@@ -4,15 +4,14 @@
 
 {{-- @unless executa se o retorno for false --}}
 
-Fornecedor: {{ $fornecedores[0]['nome'] }}
-<br>
-Status {{ $fornecedores[0]['status'] }}
-<br>
-@if( !($fornecedores[0]['status'] == 'S') )
-    Fornecedor inativo
-@endif
-<br>
-@unless($fornecedores[0]['status'] == 'S') <!-- se o retorno da condição for false -->
-    Fornecedor inativo
-    @endunless
+
+
+@isset($fornecedores)
+    Fornecedor: {{ $fornecedores[0]['nome'] }}
     <br>
+    Status {{ $fornecedores[0]['status'] }}
+    <br>
+    CNPJ: {{ $fornecedores[0]['cnpj']}}
+@endisset
+
+
